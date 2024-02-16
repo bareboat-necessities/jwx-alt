@@ -452,7 +452,7 @@ final public class JWX extends javax.swing.JFrame {
                 bw.write(data);
             }
         } catch (IOException e) {
-            System.out.println(e);
+            e.printStackTrace(System.out);
         }
     }
 
