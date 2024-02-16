@@ -25,6 +25,9 @@
  */
 package jwx;
 
+import com.formdev.flatlaf.FlatLightLaf;
+import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
+
 import javax.sound.sampled.Mixer;
 import javax.swing.*;
 import java.io.*;
@@ -932,11 +935,13 @@ final public class JWX extends javax.swing.JFrame {
      */
     public static void main(final String[] args) {
         try {
+            FlatLightLaf.setup();
+            FlatLightFlatIJTheme.setup();
             // Default to system-specific L&F
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
             java.awt.EventQueue.invokeLater(() -> new JWX(args).setVisible(true));
-        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
+        } catch (Exception e) {
             System.out.println("main: " + e);
         }
     }
