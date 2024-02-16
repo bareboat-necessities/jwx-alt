@@ -1,9 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <!-- Created on February 18, 2009 -->
 <html xmlns="http://www.w3.org/1999/xhtml">
-  <head>
+<head>
     <title>
-      JWX (version) Help
+        JWX (version) Help
     </title>
     <meta name="group" content="NOSHOW"/>
     <style type="text/css">
@@ -42,676 +42,898 @@ th {
 img {
   vertical-align:middle;
 }
+
+
+
+
     </style>
-  </head>
-  
-  <body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
-    
-    <div align="center">
-      <p></p>
-      
-      <p><h2><img src="../images/JWX_icon.png" width="32" height="32" title="" alt=""/>&nbsp;&nbsp;<b>JWX (version) Help</b></h2></p>
-      
-    <p>JWX is Copyright &copy; 2011, P. Lutus.</p></div>
-  </div>
-  <blockquote>
-    <p>JWX is released under the GPL: <a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a></p>
-    
-    <p>Please visit <a href="http://www.arachnoid.com/JWX">http://www.arachnoid.com/JWX</a> for more documentation and to acquire the latest version of JWX.</p>
-    
-    <p><b>NOTE:</b><i> For formatting reasons, users may want to temporarily make the JWX program frame larger to properly read these instructions.</i></p>
-    
-    <p><div align="center"><!-- LINK_MENU_START -->
-        <a href="#Introduction">Introduction</a> | <a href="#Radio_Receiver">Radio Receiver</a> | <a href="#Initial_Setup">Initial Setup</a><br/>
-        <a href="#Calibration">Calibration</a> | <a href="#Audio_Issues">Audio Issues</a> | <a href="#In_Depth">In Depth</a><br/>
+</head>
+
+<body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#800080" alink="#ff0000">
+
+<div align="center">
+    <p></p>
+
+    <p>
+    <h2><img src="../images/JWX_icon.png" width="32" height="32" title="" alt=""/>&nbsp;&nbsp;<b>JWX (version) Help</b>
+    </h2>
+
+    <p>JWX is Copyright &copy; 2011, P. Lutus.</p>
+</div>
+
+<blockquote>
+    <p>JWX is released under the GPL: <a href="http://www.gnu.org/licenses/gpl.html">http://www.gnu.org/licenses/gpl.html</a>
+    </p>
+
+    <p>Please visit <a href="http://www.arachnoid.com/JWX">http://www.arachnoid.com/JWX</a> for more documentation and
+        to acquire the latest version of JWX.</p>
+
+    <p><b>NOTE:</b><i> For formatting reasons, users may want to temporarily make the JWX program frame larger to
+        properly read these instructions.</i></p>
+
+    <p>
+    <div align="center"><!-- LINK_MENU_START -->
+        <a href="#Introduction">Introduction</a> | <a href="#Radio_Receiver">Radio Receiver</a> | <a
+                href="#Initial_Setup">Initial Setup</a><br/>
+        <a href="#Calibration">Calibration</a> | <a href="#Audio_Issues">Audio Issues</a> | <a href="#In_Depth">In
+            Depth</a><br/>
         <a href="#Technical">Technical</a> | <a href="#Version_History">Version History</a> | <a href="#Resources">Resources</a>
-    <!-- LINK_MENU_END --></div></p>
+        <!-- LINK_MENU_END --></div>
     <br/><br/>
     <!-- BEGIN_INSERT -->
-        
-        <div align="center"><img src="../graphics/app_image.png" width="634" height="400" title="" alt=""/><br/>
-          Figure 1: JWX in operation
-        </div>
-        
-        <a name="Introduction"></a><span class="article_subtopic">Introduction</span>
-        
-        <blockquote>
-          
-          <div class="article_graphic">
+
+    <div align="center"><img src="../graphics/app_image.png" width="634" height="400" title="" alt=""/><br/>
+        Figure 1: JWX in operation
+    </div>
+
+    <a name="Introduction"></a><span class="article_subtopic">Introduction</span>
+
+    <blockquote>
+
+        <div class="article_graphic">
             <img src="../graphics/printing_weather_chart_underway.jpg" width="400" height="280" title="" alt=""/><br/>
             <div align="center">Figure 2: Printing a weather chart while underway<br/>
-            during my <a href="http://arachnoid.com/sailbook/index.html">solo circumnavigation</a>, 1988-1991</div>
-          </div>
-          
-          
-          <p>For the benefit of those who need marine weather information but are unable to access the Internet, the U.S. <a href="http://www.nws.noaa.gov/om/marine/home.htm">National Weather Service</a> provides weather charts by way of shortwave radio. This service, variously called "weatherfax" or <a href="http://en.wikipedia.org/wiki/Radiofax">"HF radiofax"</a>, has worldwide coverage (other countries have similar services) and is ideal for ships at sea or anyone in a remote location. The service transmits daily marine weather summaries and forecasts, including satellite cloud cover images, wave heights, wind velocities and much more.</p>
-          
-          <p>During my <a href="http://arachnoid.com/sailbook/index.html">around-the-world solo sail</a> I received weather charts using the setup shown in Figure 2 on this page — a shortwave receiver, a fax demodulator box, a laptop, and a printer to render the charts. By modern standards this arrangement was quite terrible and a frequent waste of paper — the receiver might not be tuned correctly, or a certain oscillator might be out of alignment, or reception wasn't good enough — and my first warning would be a scrambled or unreadable paper chart. Because I was often more than a thousand miles from the nearest patch of dry land, wasting printer paper was especially annoying.</p>
-          
-          <p>It's many years later and I still venture across oceans (mostly in <a href="http://arachnoid.com/alaska2010/index.html">Alaska territory</a>) and I still need the National Weather Service's weatherfax charts. Over the years I've made some changes, for example I began turning the weather chart data stream into a graphic image instead of sending it to a printer. But until this project I continued to rely on the original fax demodulator box to process the shortwave receiver's signals and turn them into a chart. I also looked into other, newer demodulator hardware, thinking some of the problems might have been solved in the twenty years since the original box was designed. But the newer fax demodulators I tested had all the same problems — difficult setup, inability to stay in alignment, poor performance, no gray scale, and (inevitably) software that only ran under Windows.</p>
-          
-          <div class="article_graphic">
+                during my <a href="http://arachnoid.com/sailbook/index.html">solo circumnavigation</a>, 1988-1991
+            </div>
+        </div>
+
+
+        <p>For the benefit of those who need marine weather information but are unable to access the Internet, the U.S.
+            <a href="http://www.nws.noaa.gov/om/marine/home.htm">National Weather Service</a> provides weather charts by
+            way of shortwave radio. This service, variously called "weatherfax" or <a
+                    href="http://en.wikipedia.org/wiki/Radiofax">"HF radiofax"</a>, has worldwide coverage (other
+            countries have similar services) and is ideal for ships at sea or anyone in a remote location. The service
+            transmits daily marine weather summaries and forecasts, including satellite cloud cover images, wave
+            heights, wind velocities and much more.</p>
+
+        <p>During my <a href="http://arachnoid.com/sailbook/index.html">around-the-world solo sail</a> I received
+            weather charts using the setup shown in Figure 2 on this page — a shortwave receiver, a fax demodulator box,
+            a laptop, and a printer to render the charts. By modern standards this arrangement was quite terrible and a
+            frequent waste of paper — the receiver might not be tuned correctly, or a certain oscillator might be out of
+            alignment, or reception wasn't good enough — and my first warning would be a scrambled or unreadable paper
+            chart. Because I was often more than a thousand miles from the nearest patch of dry land, wasting printer
+            paper was especially annoying.</p>
+
+        <p>It's many years later and I still venture across oceans (mostly in <a
+                href="http://arachnoid.com/alaska2010/index.html">Alaska territory</a>) and I still need the National
+            Weather Service's weatherfax charts. Over the years I've made some changes, for example I began turning the
+            weather chart data stream into a graphic image instead of sending it to a printer. But until this project I
+            continued to rely on the original fax demodulator box to process the shortwave receiver's signals and turn
+            them into a chart. I also looked into other, newer demodulator hardware, thinking some of the problems might
+            have been solved in the twenty years since the original box was designed. But the newer fax demodulators I
+            tested had all the same problems — difficult setup, inability to stay in alignment, poor performance, no
+            gray scale, and (inevitably) software that only ran under Windows.</p>
+
+        <div class="article_graphic">
             <img src="../graphics/grayscale_test_image_small.jpg" width="400" height="471" title="" alt=""/><br/>
             <div align="center">Figure 3: JWX locally-generated grayscale test image</div>
-          </div>
-          
-          <p>Recently, in frustration, I decided to try creating a weatherfax demodulator/receiver entirely in software — no demodulator box, no printer, just a shortwave receiver attached to the computer's sound card. This strategy is only possible because computers are much faster, and sound cards more sophisticated, than they were a few years ago. My project was a complete success, and JWX is the result.</p>
-          
-          <p>To use JWX, you need:</p>
-          
-          <ul>
+        </div>
+
+        <p>Recently, in frustration, I decided to try creating a weatherfax demodulator/receiver entirely in software —
+            no demodulator box, no printer, just a shortwave receiver attached to the computer's sound card. This
+            strategy is only possible because computers are much faster, and sound cards more sophisticated, than they
+            were a few years ago. My project was a complete success, and JWX is the result.</p>
+
+        <p>To use JWX, you need:</p>
+
+        <ul>
             <li>A computer running either Linux or Windows, with Java installed.</li>
             <li>A good-quality shortwave radio, able to tune the range 2 - 25 MHz, with a single-sideband mode.</li>
-            <li>An audio patch cord to connect the receiver to your computer's sound card line (or microphone) input.</li>
-          </ul>
-          
-          <p>That's all — nothing else is needed.</p>
-          
-        </blockquote>
-        
-        <a name="Radio_Receiver"></a><span class="article_subtopic">Radio Receiver</span>
-        
-        <blockquote>
-          
-          <p>Not all shortwave radios are created equal, and there are many very bad shortwave radios available. The best choice for fax reception is a stable, digital radio with the ability to tune and display frequencies with a resolution of less than one kilohertz. There are many suitable radios and I don't normally recommend a particular manufacturer's radio, but I can't resist saying if you got your shortwave radio at Radio Shack, chances are it's not suitable, but if the radio is made by Icom, chances are it's more than good enough. There are many receivers between these extremes, and most will produce acceptable results.</p>
-          
-          <p>A typical reception setup consists of a radio, an external antenna connected to the radio with a coaxial cable (to shield against computer interference), and a computer with a sound card. A portable shortwave radio using its own whip antenna will probably not work if it's near the computer, because the computer's logic circuits create too much radio noise in the frequency band of interest.</p>
-          
-          <p>Weatherfax transmitting stations use a special FM mode that allows them to transmit what amounts to a TV picture, but at a much slower rate than TV (transmitting a complete weather chart typically requires ten minutes). This slower rate allows reasonable-quality images to be broadcast over thousands of miles even in the presence of interference and fading.</p>
-          
-          <p>The most up-to-date information about U.S. weatherfax schedules and frequencies is available at the <a href="http://www.nws.noaa.gov/om/marine/home.htm">National Weather Service</a> marine weather site, but here is a recent list of U.S. transmission locations and frequencies (Winter 2010-2011):</p>
-          
-          <ul>
-            <li>Boston, MA (NMF) 4235(02z, 08z), 6340.5, 9110, 12750(14z) kHz </li>
-            <li>New Orleans, LA (NMG) 4317.9, 8503.9, 12789.9, 17146.4(12,18Z) kHz </li>
-            <li>Kodiak, AK (NOJ) 2054(10z, 18z), 4298, 8459, 12412.5(4z, 22z) kHz </li>
-            <li>Pt.Reyes, CA (NMC) 4346(except 19z,23Z), 8682, 12786, 17151.2, 22527(19z,23Z) kHz </li>
+            <li>An audio patch cord to connect the receiver to your computer's sound card line (or microphone) input.
+            </li>
+        </ul>
+
+        <p>That's all — nothing else is needed.</p>
+
+    </blockquote>
+
+    <a name="Radio_Receiver"></a><span class="article_subtopic">Radio Receiver</span>
+
+    <blockquote>
+
+        <p>Not all shortwave radios are created equal, and there are many very bad shortwave radios available. The best
+            choice for fax reception is a stable, digital radio with the ability to tune and display frequencies with a
+            resolution of less than one kilohertz. There are many suitable radios and I don't normally recommend a
+            particular manufacturer's radio, but I can't resist saying if you got your shortwave radio at Radio Shack,
+            chances are it's not suitable, but if the radio is made by Icom, chances are it's more than good enough.
+            There are many receivers between these extremes, and most will produce acceptable results.</p>
+
+        <p>A typical reception setup consists of a radio, an external antenna connected to the radio with a coaxial
+            cable (to shield against computer interference), and a computer with a sound card. A portable shortwave
+            radio using its own whip antenna will probably not work if it's near the computer, because the computer's
+            logic circuits create too much radio noise in the frequency band of interest.</p>
+
+        <p>Weatherfax transmitting stations use a special FM mode that allows them to transmit what amounts to a TV
+            picture, but at a much slower rate than TV (transmitting a complete weather chart typically requires ten
+            minutes). This slower rate allows reasonable-quality images to be broadcast over thousands of miles even in
+            the presence of interference and fading.</p>
+
+        <p>The most up-to-date information about U.S. weatherfax schedules and frequencies is available at the <a
+                href="http://www.nws.noaa.gov/om/marine/home.htm">National Weather Service</a> marine weather site, but
+            here is a recent list of U.S. transmission locations and frequencies (Winter 2010-2011):</p>
+
+        <ul>
+            <li>Boston, MA (NMF) 4235(02z, 08z), 6340.5, 9110, 12750(14z) kHz</li>
+            <li>New Orleans, LA (NMG) 4317.9, 8503.9, 12789.9, 17146.4(12,18Z) kHz</li>
+            <li>Kodiak, AK (NOJ) 2054(10z, 18z), 4298, 8459, 12412.5(4z, 22z) kHz</li>
+            <li>Pt.Reyes, CA (NMC) 4346(except 19z,23Z), 8682, 12786, 17151.2, 22527(19z,23Z) kHz</li>
             <li>Honolulu, HI (KVM70) 9982.5(0519-1556z), 11090, 16135(1719-0356z) kHz</li>
-          </ul>
-          
-          <p>To receive a weatherfax station, one tunes 1.9 KHz below the station's published frequency and selects upper-sideband mode. For example, to receive the Pt. Reyes 4346 KHz broadcast, tune to 4344.1 KHz.</p>
-          
-        </blockquote>
-        
-        <a name="Initial_Setup"></a><span class="article_subtopic">Initial Setup</span>
-        <blockquote>
-          <ul>
-            <li>Use an audio patch cord to connect your shortwave receiver's output to your computer's line-input or microphone-input jack.</li>
-            <li>Adjust the shortwave receiver's volume control for normal output levels (the nature of the signal is not important at this stage).</li>
-            <li>Use your computer's audio controls to produce a normal audio level as shown on the JWX audio level indicator.</li>
-            <li>If you encounter difficulties acquiring adequate sound levels, try selecting a different sound source — use the audio source selector to the left of the "Monitor" checkbox:
-              <ul>
-                <li>Click "Standby".</li>
-                <li>Use the source selector to choose a different source — most operating systems have two sources.</li>
-                <li>Click "Receive."</li>
-                <li>Note the sound level on the "Audio" indicator.</li>
-              </ul>
-              
+        </ul>
+
+        <p>To receive a weatherfax station, one tunes 1.9 KHz below the station's published frequency and selects
+            upper-sideband mode. For example, to receive the Pt. Reyes 4346 KHz broadcast, tune to 4344.1 KHz.</p>
+
+    </blockquote>
+
+    <a name="Initial_Setup"></a><span class="article_subtopic">Initial Setup</span>
+    <blockquote>
+        <ul>
+            <li>Use an audio patch cord to connect your shortwave receiver's output to your computer's line-input or
+                microphone-input jack.
             </li>
-          </ul>
-          
-        </blockquote>
-        
-        <a name="Calibration"></a><span class="article_subtopic">Calibration</span>
-        
-        <div class="article_graphic">
-          <img src="../graphics/example_chart_uncalibrated_small.jpg" width="400" height="245" title="" alt=""/><br/>
-          <div align="center">Figure 4: Uncalibrated JWX reception example</div>
-        </div>
-        
-        <blockquote>
-          <p>In most ways, radiofax reception is a simple matter of decoding tones and constructing an image, but there is one exception — the radiofax protocol requires a very high degree of time synchronization between sender and receiver. To receive charts that are not diagonally out of alignment requires a clock synchronization accuracy of about one part in a million, much better accuracy than computer clocks tend to have.</p>
-          
-          <p>JWX has a method to correct for clock errors, and it includes a simple calibration procedure to synchronize your computer's clock with a radiofax transmitter. To adjust your computer's timing, follow this procedure:</p>
-          
-          <ul>
+            <li>Adjust the shortwave receiver's volume control for normal output levels (the nature of the signal is not
+                important at this stage).
+            </li>
+            <li>Use your computer's audio controls to produce a normal audio level as shown on the JWX audio level
+                indicator.
+            </li>
+            <li>If you encounter difficulties acquiring adequate sound levels, try selecting a different sound source —
+                use the audio source selector to the left of the "Monitor" checkbox:
+                <ul>
+                    <li>Click "Standby".</li>
+                    <li>Use the source selector to choose a different source — most operating systems have two
+                        sources.
+                    </li>
+                    <li>Click "Receive."</li>
+                    <li>Note the sound level on the "Audio" indicator.</li>
+                </ul>
+
+            </li>
+        </ul>
+
+    </blockquote>
+
+    <a name="Calibration"></a><span class="article_subtopic">Calibration</span>
+
+    <div class="article_graphic">
+        <img src="../graphics/example_chart_uncalibrated_small.jpg" width="400" height="245" title="" alt=""/><br/>
+        <div align="center">Figure 4: Uncalibrated JWX reception example</div>
+    </div>
+
+    <blockquote>
+        <p>In most ways, radiofax reception is a simple matter of decoding tones and constructing an image, but there is
+            one exception — the radiofax protocol requires a very high degree of time synchronization between sender and
+            receiver. To receive charts that are not diagonally out of alignment requires a clock synchronization
+            accuracy of about one part in a million, much better accuracy than computer clocks tend to have.</p>
+
+        <p>JWX has a method to correct for clock errors, and it includes a simple calibration procedure to synchronize
+            your computer's clock with a radiofax transmitter. To adjust your computer's timing, follow this
+            procedure:</p>
+
+        <ul>
             <li>Tune in some radiofax transmissions using the above instructions, and let JWX decode them.</li>
-            <li>If you tune in a fax transmission that is already underway and want to receive a partial chart, just click the "Lock" button to force JWX to commence reception without horizontal synchronization.</li>
-            <li>After receiving a chart, you will almost certainly notice that vertical lines aren't actually vertical, as shown in Figure 4.</li>
-            <li>To begin the calibration precedure, point your mouse cursor at a vertical feature of the received chart and press the <i>right</i> mouse button (Figure 4, green dot).</li>
-            <li>After one mouse press, JWX will display a colored label saying that the calibration procedure has begun.</li>
-            <li>Now point your mouse cursor at the opposite end of the same vertical feature and press the right mouse button again (Figure 4, orange dot).</li>
+            <li>If you tune in a fax transmission that is already underway and want to receive a partial chart, just
+                click the "Lock" button to force JWX to commence reception without horizontal synchronization.
+            </li>
+            <li>After receiving a chart, you will almost certainly notice that vertical lines aren't actually vertical,
+                as shown in Figure 4.
+            </li>
+            <li>To begin the calibration precedure, point your mouse cursor at a vertical feature of the received chart
+                and press the <i>right</i> mouse button (Figure 4, green dot).
+            </li>
+            <li>After one mouse press, JWX will display a colored label saying that the calibration procedure has
+                begun.
+            </li>
+            <li>Now point your mouse cursor at the opposite end of the same vertical feature and press the right mouse
+                button again (Figure 4, orange dot).
+            </li>
             <li>JWX will now ask some questions:
-              
-              <ul>
-                <li>To the question <img style="vertical-align:middle;margin:8px" src="../graphics/preserve_dialog.png" width="298" height="117" title="" alt=""/>, reply "Yes."</li>
-                <li>To the question <img style="vertical-align:middle;margin:8px" src="../graphics/apply_dialog.png" width="388" height="117" title="" alt=""/>, reply "Yes" also.</li>
-              </ul>
+
+                <ul>
+                    <li>To the question <img style="vertical-align:middle;margin:8px"
+                                             src="../graphics/preserve_dialog.png" width="298" height="117" title=""
+                                             alt=""/>, reply "Yes."
+                    </li>
+                    <li>To the question <img style="vertical-align:middle;margin:8px" src="../graphics/apply_dialog.png"
+                                             width="388" height="117" title="" alt=""/>, reply "Yes" also.
+                    </li>
+                </ul>
             </li>
-            <li>If you have pointed your mouse cursor carefully, the meant-to-be vertical features in your image will become truly vertical. If they aren't quite right, just repeat the above procedure (using the same chart) and fine-tune the result to your satisfaction. In subsequent refinements, when a nonzero calibration value appears in the calibration number window, JWX will ask one more question:
-              <ul>
-                <li>To the question <img style="vertical-align:middle;margin:8px" src="../graphics/add_replace_dialog.png" width="353" height="117" title="" alt=""/>, reply "Add."</li>
-              </ul>
+            <li>If you have pointed your mouse cursor carefully, the meant-to-be vertical features in your image will
+                become truly vertical. If they aren't quite right, just repeat the above procedure (using the same
+                chart) and fine-tune the result to your satisfaction. In subsequent refinements, when a nonzero
+                calibration value appears in the calibration number window, JWX will ask one more question:
+                <ul>
+                    <li>To the question <img style="vertical-align:middle;margin:8px"
+                                             src="../graphics/add_replace_dialog.png" width="353" height="117" title=""
+                                             alt=""/>, reply "Add."
+                    </li>
+                </ul>
             </li>
-            
+
             <div class="article_graphic">
-              <img src="../graphics/example_chart_aligned_small.jpg" width="400" height="245" title="" alt=""/><br/>
-              <div align="center">Figure 5: Calibrated JWX reception example</div>
+                <img src="../graphics/example_chart_aligned_small.jpg" width="400" height="245" title="" alt=""/><br/>
+                <div align="center">Figure 5: Calibrated JWX reception example</div>
             </div>
-            
-            <li>The above calibration procedure can be repeated until you are satisfied with the results. After it is complete, subsequent charts will be automatically corrected as they are received.</li>
-            <li>The position and order of your calibration clicks don't really matter — you can start at the bottom of the image and then move to the top if you choose. The only requirement is that the two clicks be aligned with the same vertical feature.</li>
-            <li>Enabling the "Full Scale" image mode makes it easier to accurately position the mouse cursor on vertical features.</li>
-            <li>Because each computer's clock is different, each computer that runs JWX will need a separate calibration and will produce a unique calibration value.</li>
-            <li>For future reference it is a good idea to write down the calibration number that appears in the calibration window after the above procedure. This makes it possible to simply type in a valid calibration number in the event that the original value is lost or inadvertently changed.</li>
-            
-          </ul>
-          
-        </blockquote>
-        
-        <a name="Audio_Issues"></a><span class="article_subtopic">Audio Issues</span>
-        
-        <blockquote>
-          
-          <p>While developing JWX I became aware that modern computer sound systems are not as simple as they could be. In the original design I opened default input and output sound channels, hoping the operating system would figure out what to do, but this turned out to be na&iuml;ve. Current JWX versions have sound channel selectors for both input and output (located to the right of the green machine state display).</p>
-          
-          <p>If the user is very lucky, choosing the first available input and output sound channels will provide satisfactory performance. But this won't always be true, and JWX locates and provides all available input and output channels for maximum flexibility.</p>
-          
-          <ul>
-            <li>For both input and output channels, a description of the channel is displayed as a tooltip over the selection box. When you change channels, the tooltip description changes in step. This helps greatly in sorting out audio problems.</li>
-            <li>To choose a different input channel, press "Standby," select from the list adjacent to the label "In:", then press "Receive". This step sometimes improves signal levels or reduces interference from other sound sources.</li>
-            
+
+            <li>The above calibration procedure can be repeated until you are satisfied with the results. After it is
+                complete, subsequent charts will be automatically corrected as they are received.
+            </li>
+            <li>The position and order of your calibration clicks don't really matter — you can start at the bottom of
+                the image and then move to the top if you choose. The only requirement is that the two clicks be aligned
+                with the same vertical feature.
+            </li>
+            <li>Enabling the "Full Scale" image mode makes it easier to accurately position the mouse cursor on vertical
+                features.
+            </li>
+            <li>Because each computer's clock is different, each computer that runs JWX will need a separate calibration
+                and will produce a unique calibration value.
+            </li>
+            <li>For future reference it is a good idea to write down the calibration number that appears in the
+                calibration window after the above procedure. This makes it possible to simply type in a valid
+                calibration number in the event that the original value is lost or inadvertently changed.
+            </li>
+
+        </ul>
+
+    </blockquote>
+
+    <a name="Audio_Issues"></a><span class="article_subtopic">Audio Issues</span>
+
+    <blockquote>
+
+        <p>While developing JWX I became aware that modern computer sound systems are not as simple as they could be. In
+            the original design I opened default input and output sound channels, hoping the operating system would
+            figure out what to do, but this turned out to be na&iuml;ve. Current JWX versions have sound channel
+            selectors for both input and output (located to the right of the green machine state display).</p>
+
+        <p>If the user is very lucky, choosing the first available input and output sound channels will provide
+            satisfactory performance. But this won't always be true, and JWX locates and provides all available input
+            and output channels for maximum flexibility.</p>
+
+        <ul>
+            <li>For both input and output channels, a description of the channel is displayed as a tooltip over the
+                selection box. When you change channels, the tooltip description changes in step. This helps greatly in
+                sorting out audio problems.
+            </li>
+            <li>To choose a different input channel, press "Standby," select from the list adjacent to the label "In:",
+                then press "Receive". This step sometimes improves signal levels or reduces interference from other
+                sound sources.
+            </li>
+
             <li>To choose a different output chanel, select from the list adjacent to the label "Out:" at any time.</li>
-            
-            <li>If a particular output channel selection causes feedback or image distortion, choose a different channel or disable the output by setting the volume level to 0.</li>
-            
-            <li>Remember that the output channel is only meant to allow the user to directly monitor the weatherfax broadcast audio. If you can already monitor it by some other means, disable this channel by setting the volume level to 0. This eases the computation burden and may also prevent signal distortion.</li>
-          </ul>
-          
-          
-          
-        </blockquote>
-        
-        
-        <a name="In_Depth"></a><span class="article_subtopic">In Depth</span>
-        
-        <blockquote>
-          
-          <p><b>Automatic Reception</b></p>
-          
-          <p>Once the above-described calibration procedure is complete, you can simply let JWX run unattended and collect weather charts — just click the "Receive" button. To be sure that JWX is ready to receive charts, check that there is a label at the lower center of the JWX display saying <span style="background-color:black;color:#80ff80">&nbsp;&nbsp;Receive | WAITSIG&nbsp;&nbsp;</span> or <span style="background-color:black;color:#80ff80">&nbsp;&nbsp;Receive | WAITSTB&nbsp;&nbsp;</span> and the incoming audio level is acceptable.</p>
-          <ul>
-            
-            <li>If connected to a shortwave radio, JWX will automatically receive and store weather charts in a directory it creates, located at (user home directory)/.JWX/charts.</li>
-            <li>Each chart is distinctly time-stamped so that, even after being copied to a different location, you can determine when it was received and correlate charts with the broadcast schedule of the radiofax station you have chosen.</li>
-          </ul>
-          
-          <p><b>Unsynchronized Charts</b></p>
-          
-          <div class="article_graphic">
-            <img src="../graphics/example_chart_unsynchronized_small.jpg" width="400" height="245" title="" alt=""/><br/>
+
+            <li>If a particular output channel selection causes feedback or image distortion, choose a different channel
+                or disable the output by setting the volume level to 0.
+            </li>
+
+            <li>Remember that the output channel is only meant to allow the user to directly monitor the weatherfax
+                broadcast audio. If you can already monitor it by some other means, disable this channel by setting the
+                volume level to 0. This eases the computation burden and may also prevent signal distortion.
+            </li>
+        </ul>
+
+
+    </blockquote>
+
+
+    <a name="In_Depth"></a><span class="article_subtopic">In Depth</span>
+
+    <blockquote>
+
+        <p><b>Automatic Reception</b></p>
+
+        <p>Once the above-described calibration procedure is complete, you can simply let JWX run unattended and collect
+            weather charts — just click the "Receive" button. To be sure that JWX is ready to receive charts, check that
+            there is a label at the lower center of the JWX display saying <span
+                    style="background-color:black;color:#80ff80">&nbsp;&nbsp;Receive | WAITSIG&nbsp;&nbsp;</span> or
+            <span style="background-color:black;color:#80ff80">&nbsp;&nbsp;Receive | WAITSTB&nbsp;&nbsp;</span> and the
+            incoming audio level is acceptable.</p>
+        <ul>
+
+            <li>If connected to a shortwave radio, JWX will automatically receive and store weather charts in a
+                directory it creates, located at (user home directory)/.JWX/charts.
+            </li>
+            <li>Each chart is distinctly time-stamped so that, even after being copied to a different location, you can
+                determine when it was received and correlate charts with the broadcast schedule of the radiofax station
+                you have chosen.
+            </li>
+        </ul>
+
+        <p><b>Unsynchronized Charts</b></p>
+
+        <div class="article_graphic">
+            <img src="../graphics/example_chart_unsynchronized_small.jpg" width="400" height="245" title=""
+                 alt=""/><br/>
             <div align="center">Figure 6: Unsynchronized chart</div>
-          </div>
-          
-          <p>As mentioned earlier, if you tune in a radiofax broadcast that is underway and you want to receive a partial chart, simply click the "Lock" button to force JWX to begin reception without synchronization. This will probably produce a chart as shown in Figure 6 — a perfectly good chart, but not synchronized. To correct such a chart, simply point your mouse cursor at the location of the green dot in Figure 6 and press the <i>left</i> mouse button. This will resynchronize the chart, either as it is received or later.</p>
-          
-          <p>Remember these points:</p>
-          
-          <ul>
+        </div>
+
+        <p>As mentioned earlier, if you tune in a radiofax broadcast that is underway and you want to receive a partial
+            chart, simply click the "Lock" button to force JWX to begin reception without synchronization. This will
+            probably produce a chart as shown in Figure 6 — a perfectly good chart, but not synchronized. To correct
+            such a chart, simply point your mouse cursor at the location of the green dot in Figure 6 and press the <i>left</i>
+            mouse button. This will resynchronize the chart, either as it is received or later.</p>
+
+        <p>Remember these points:</p>
+
+        <ul>
             <li>To force reception of a chart without synchronization, click "Lock."</li>
-            <li>To horizontally realign a chart, point the mouse cursor at the point on the chart that should be located at the edge, and press the <i>left</i> mouse button. This action can be performed repeatedly without losing any chart data. </li>
-            <li>After chart reception, to commence the calibration procedure described above, press the <i>right</i> mouse button.</li>
-            <li>You may also begin the calibration procedure by pressing the "Calibrate" button, then pointing the mouse cursor and pressing the right mouse button as described above, or you may type a calibration value into the calibration number window.</li>
-          </ul>
-          
-          <div class="article_graphic">
+            <li>To horizontally realign a chart, point the mouse cursor at the point on the chart that should be located
+                at the edge, and press the <i>left</i> mouse button. This action can be performed repeatedly without
+                losing any chart data.
+            </li>
+            <li>After chart reception, to commence the calibration procedure described above, press the <i>right</i>
+                mouse button.
+            </li>
+            <li>You may also begin the calibration procedure by pressing the "Calibrate" button, then pointing the mouse
+                cursor and pressing the right mouse button as described above, or you may type a calibration value into
+                the calibration number window.
+            </li>
+        </ul>
+
+        <div class="article_graphic">
             <img src="../graphics/test_pattern_chart_small.jpg" width="400" height="287" title="" alt=""/><br/>
             <div align="center">Figure 7: JWX locally-generated<br/>grayscale test pattern</div>
-          </div>
-          
-          <p><b>Grayscale</b></p>
-          
-          <p>A typical radiofax decoder only produces monochrome charts, but weatherfax services now transmit satellite cloud-cover images and other charts that are better received by a decoder able to resolve shades of gray. Because JWX supports grayscale and because this improves the quality of almost all received charts, it's recommended to leave grayscale mode enabled in most circumstances.</p>
-          
-          <p><b>Data Conversion Rate</b></p>
-          
-          <ul>
-            <li>JWX uses your computer's sound card, essentially an analog-to-digital converter built into most modern personal computers, to convert the signal information from your shortwave receiver.</li>
-            <li>Your sound card has a selection of data conversion rates for different purposes, and JWX lets you choose an appropriate data rate (lower left, "Data Rate") while JWX is in standby mode.</li>
-            <li>As the data conversion rate increases, so does the quality of the images, but your computer's workload increases as well.</li>
-            
-            <li>Because of bandwidth limits imposed by typical shortwave receivers, optimal weather charts can be decoded using relatively low data conversion rates (i.e. 10,000 or 20,000 samples per second) and higher rates won't necessarily improve the results.</li>
-            
-            <li>To free your computer from an unnecessary processing burden, choose the lowest data conversion rate that produces the chart quality you require. An excessively high data conversion rate may slow your computer down or even prevent it from staying in synchronization with incoming chart data.</li>
-          </ul>
-          
-          <p><b>Weak-Signal Problems and Solutions</b></p>
-          
-          <div class="article_graphic">
+        </div>
+
+        <p><b>Grayscale</b></p>
+
+        <p>A typical radiofax decoder only produces monochrome charts, but weatherfax services now transmit satellite
+            cloud-cover images and other charts that are better received by a decoder able to resolve shades of gray.
+            Because JWX supports grayscale and because this improves the quality of almost all received charts, it's
+            recommended to leave grayscale mode enabled in most circumstances.</p>
+
+        <p><b>Data Conversion Rate</b></p>
+
+        <ul>
+            <li>JWX uses your computer's sound card, essentially an analog-to-digital converter built into most modern
+                personal computers, to convert the signal information from your shortwave receiver.
+            </li>
+            <li>Your sound card has a selection of data conversion rates for different purposes, and JWX lets you choose
+                an appropriate data rate (lower left, "Data Rate") while JWX is in standby mode.
+            </li>
+            <li>As the data conversion rate increases, so does the quality of the images, but your computer's workload
+                increases as well.
+            </li>
+
+            <li>Because of bandwidth limits imposed by typical shortwave receivers, optimal weather charts can be
+                decoded using relatively low data conversion rates (i.e. 10,000 or 20,000 samples per second) and higher
+                rates won't necessarily improve the results.
+            </li>
+
+            <li>To free your computer from an unnecessary processing burden, choose the lowest data conversion rate that
+                produces the chart quality you require. An excessively high data conversion rate may slow your computer
+                down or even prevent it from staying in synchronization with incoming chart data.
+            </li>
+        </ul>
+
+        <p><b>Weak-Signal Problems and Solutions</b></p>
+
+        <div class="article_graphic">
             <img src="../graphics/cloud_cover_chart_small.jpg" width="400" height="287" title="" alt=""/><br/>
             <div align="center">Figure 8: On-air JWX satellite cloud cover image</div>
-          </div>
-          
-          Shortwave radio reception varies greatly in quality, and there will be times when received signals are marginal. JWX has been designed to accommodate varying signal levels and noisy conditions, but there are some adjustments and practices that can increase the probability of successful chart reception:
-          
-          <ul>
-            <li>Try changing frequencies. Each of the U.S. weatherfax tranmitting stations operates on multiple frequencies, and changing atmospheric conditions favor different frequencies at different times of day and different seasons. With a modern digital shortwave radio and with multiple operating frequencies stored in the receiver's memory, changing frequencies on the fly won't significantly interfere with an ongoing chart reception.</li>
-            <li>Adjust the JWX "Threshold" setting, the sensitivity control for start/stop tone detection:
-              <ul>
-                <li>If JWX doesn't respond to the 300 Hz fax start tone (see below), decrease the threshold setting.</li>
-                <li>If JWX stops reception prematurely before a chart has been fully received and returns to the wait state, increase the threshold setting.</li>
-                <li>In most cases, a threshold setting between 20% and 50% will produce the best results.</li>
-              </ul>
-            </li>
-            <li>Try improving the antenna installation. The ideal antenna for fax reception is one well-separated from the receiver and computer, and the feed line between the antenna and the receiver should be by way of a coaxial cable to provide shielding against computer noise.</li>
-            
-            
-          </ul>
-          
-          <p><b>Using an Audio Recorder</b></p>
-          
-          <p>When sailing where weatherfax signals are weak, I sometimes turn off the computer (to reduce interference) and use a small solid-state audio recorder to record a series of weather chart transmissions in advance. After all the charts are recorded, I turn on the computer and play the recording into the computer instead of directly connecting the receiver. This greatly reduces interference created by the computer itself.</p>
+        </div>
 
-          
-        </blockquote>
-        
-        <a name="Technical"></a><span class="article_subtopic">Technical</span>
-        
-        <blockquote>
-          
-          <div class="article_graphic">
+        Shortwave radio reception varies greatly in quality, and there will be times when received signals are marginal.
+        JWX has been designed to accommodate varying signal levels and noisy conditions, but there are some adjustments
+        and practices that can increase the probability of successful chart reception:
+
+        <ul>
+            <li>Try changing frequencies. Each of the U.S. weatherfax tranmitting stations operates on multiple
+                frequencies, and changing atmospheric conditions favor different frequencies at different times of day
+                and different seasons. With a modern digital shortwave radio and with multiple operating frequencies
+                stored in the receiver's memory, changing frequencies on the fly won't significantly interfere with an
+                ongoing chart reception.
+            </li>
+            <li>Adjust the JWX "Threshold" setting, the sensitivity control for start/stop tone detection:
+                <ul>
+                    <li>If JWX doesn't respond to the 300 Hz fax start tone (see below), decrease the threshold
+                        setting.
+                    </li>
+                    <li>If JWX stops reception prematurely before a chart has been fully received and returns to the
+                        wait state, increase the threshold setting.
+                    </li>
+                    <li>In most cases, a threshold setting between 20% and 50% will produce the best results.</li>
+                </ul>
+            </li>
+            <li>Try improving the antenna installation. The ideal antenna for fax reception is one well-separated from
+                the receiver and computer, and the feed line between the antenna and the receiver should be by way of a
+                coaxial cable to provide shielding against computer noise.
+            </li>
+
+
+        </ul>
+
+        <p><b>Using an Audio Recorder</b></p>
+
+        <p>When sailing where weatherfax signals are weak, I sometimes turn off the computer (to reduce interference)
+            and use a small solid-state audio recorder to record a series of weather chart transmissions in advance.
+            After all the charts are recorded, I turn on the computer and play the recording into the computer instead
+            of directly connecting the receiver. This greatly reduces interference created by the computer itself.</p>
+
+
+    </blockquote>
+
+    <a name="Technical"></a><span class="article_subtopic">Technical</span>
+
+    <blockquote>
+
+        <div class="article_graphic">
             <img src="../graphics/fax_signal_diagram.png" width="393" height="326" title="" alt=""/><br/>
             <div align="center">Figure 9: Radiofax FM Signal Diagram</div>
-          </div>
-          
-          <p><b>Radiofax Protocol</b></p>
-          
-          
-          <p>Radiofax transmission uses a mode formally described as Frequency-Shift Keying (FSK or F3C), but the grayscale capability implies something more like frequency modulation (FM), in which any intermediate level may be included in the data stream.</p>
-          
-          <p>The nominal deviation from a radiofax station's assigned carrier frequency is &plusmn; 400 Hz as shown in Figure 9. For a receiver tuned 1.9 KHz below the assigned carrier frequency, the black level is 1500 Hz, gray 1900 Hz and white 2300 Hz. Grayscale data can produce any level intermediate between the black and white extremes.</p>
-          
-          There are two special modulation frequencies — 300 Hz for 5 seconds marks the start of a fax broadcast, and 450 Hz for 5 seconds marks the end.
-          
-          <p>Because of the importance of weatherfax to international shipping and general boating, and because of the wide adoption of digital radios, there have been a number of changes to the protocol over the years, and there are some variations in detail from country to country.</p>
-          
-          <p>This table shows the stages and timings in the broadcast of a radio fax:</p>
-          <br/>
-          
-          <table class="present bordered" cellspacing="-1" cellpadding="4">
+        </div>
+
+        <p><b>Radiofax Protocol</b></p>
+
+
+        <p>Radiofax transmission uses a mode formally described as Frequency-Shift Keying (FSK or F3C), but the
+            grayscale capability implies something more like frequency modulation (FM), in which any intermediate level
+            may be included in the data stream.</p>
+
+        <p>The nominal deviation from a radiofax station's assigned carrier frequency is &plusmn; 400 Hz as shown in
+            Figure 9. For a receiver tuned 1.9 KHz below the assigned carrier frequency, the black level is 1500 Hz,
+            gray 1900 Hz and white 2300 Hz. Grayscale data can produce any level intermediate between the black and
+            white extremes.</p>
+
+        There are two special modulation frequencies — 300 Hz for 5 seconds marks the start of a fax broadcast, and 450
+        Hz for 5 seconds marks the end.
+
+        <p>Because of the importance of weatherfax to international shipping and general boating, and because of the
+            wide adoption of digital radios, there have been a number of changes to the protocol over the years, and
+            there are some variations in detail from country to country.</p>
+
+        <p>This table shows the stages and timings in the broadcast of a radio fax:</p>
+        <br/>
+
+        <table class="present bordered" cellspacing="-1" cellpadding="4">
             <tr>
-              <th>
-                Name
-              </th>
-              <th>
-                Description
-              </th>
-              <th>
-                Time
-              </th>
-              <th>
-                Comment
-              </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Time
+                </th>
+                <th>
+                    Comment
+                </th>
             </tr>
             <tr>
-              <td>
-                Tune
-              </td>
-              <td>
-                White level (2300 Hz) to allow receiver tuning
-              </td>
-              <td>
-                60 seconds
-              </td>
-              <td>
-                This seems to have been abandoned or curtailed in many places because modern digital radios don't require manual tuning.
-              </td>
+                <td>
+                    Tune
+                </td>
+                <td>
+                    White level (2300 Hz) to allow receiver tuning
+                </td>
+                <td>
+                    60 seconds
+                </td>
+                <td>
+                    This seems to have been abandoned or curtailed in many places because modern digital radios don't
+                    require manual tuning.
+                </td>
             </tr>
             <tr>
-              <td>
-                Start Tone
-              </td>
-              <td>
-                300 Hz start tone
-              </td>
-              <td>
-                5 seconds
-              </td>
-              <td>
-                This tone marks the beginning of the fax sequence.
-              </td>
+                <td>
+                    Start Tone
+                </td>
+                <td>
+                    300 Hz start tone
+                </td>
+                <td>
+                    5 seconds
+                </td>
+                <td>
+                    This tone marks the beginning of the fax sequence.
+                </td>
             </tr>
             <tr>
-              <td>
-                Synchronization
-              </td>
-              <td>
-                40 lines consisting of 25 milliseconds of white level and 475 milliseconds of black level.
-              </td>
-              <td>
-                20 seconds
-              </td>
-              <td>
-                This sequence allows the receiver to acquire horizontal synchronization. Some non-U.S. locales use 60 lines/30 seconds.
-              </td>
+                <td>
+                    Synchronization
+                </td>
+                <td>
+                    40 lines consisting of 25 milliseconds of white level and 475 milliseconds of black level.
+                </td>
+                <td>
+                    20 seconds
+                </td>
+                <td>
+                    This sequence allows the receiver to acquire horizontal synchronization. Some non-U.S. locales use
+                    60 lines/30 seconds.
+                </td>
             </tr>
             <tr>
-              <td>
-                Image data
-              </td>
-              <td>
-                Each line consists of 25 milliseconds of white level and 475 milliseconds of image data.
-              </td>
-              <td>
-                Two lines per second, with a duration determined by image size.
-              </td>
-              <td>
-                Some charts are rotated 90&deg; to allow a wider format than the default orientation allows. JWX can reorient these charts after reception.
-              </td>
+                <td>
+                    Image data
+                </td>
+                <td>
+                    Each line consists of 25 milliseconds of white level and 475 milliseconds of image data.
+                </td>
+                <td>
+                    Two lines per second, with a duration determined by image size.
+                </td>
+                <td>
+                    Some charts are rotated 90&deg; to allow a wider format than the default orientation allows. JWX can
+                    reorient these charts after reception.
+                </td>
             </tr>
             <tr>
-              <td>
-                Stop
-              </td>
-              <td>
-                450 Hz stop tone
-              </td>
-              <td>
-                5 seconds
-              </td>
-              <td>
-                This marks the end of the fax transmission.
-              </td>
+                <td>
+                    Stop
+                </td>
+                <td>
+                    450 Hz stop tone
+                </td>
+                <td>
+                    5 seconds
+                </td>
+                <td>
+                    This marks the end of the fax transmission.
+                </td>
             </tr>
             <tr>
-              <td>
-                Tail
-              </td>
-              <td>
-                Black level (1500 Hz)
-              </td>
-              <td>
-                10 seconds
-              </td>
-              <td>
-                This feature is not always present.
-              </td>
+                <td>
+                    Tail
+                </td>
+                <td>
+                    Black level (1500 Hz)
+                </td>
+                <td>
+                    10 seconds
+                </td>
+                <td>
+                    This feature is not always present.
+                </td>
             </tr>
-          </table>
-          
-          <p><b>JWX State Machine</b></p>
-          
-          <p>JWX tracks the incoming fax signal using a state machine that approximately corresponds to the temporal sequence of the fax signal itself. JWX shows the present state of its state machine at the lower center of the display, like this:<span style="background-color:black;color:#80ff80;">
+        </table>
+
+        <p><b>JWX State Machine</b></p>
+
+        <p>JWX tracks the incoming fax signal using a state machine that approximately corresponds to the temporal
+            sequence of the fax signal itself. JWX shows the present state of its state machine at the lower center of
+            the display, like this:<span style="background-color:black;color:#80ff80;">
           &nbsp;&nbsp;Receive | WAITSIG&nbsp;&nbsp;</span>. Here are the JWX state machine states and explanations:</p>
-          <br/>
-          
-          <table class="present bordered" cellspacing="-1" cellpadding="4">
+        <br/>
+
+        <table class="present bordered" cellspacing="-1" cellpadding="4">
             <tr>
-              <th>
-                Name
-              </th>
-              <th>
-                Description
-              </th>
-              <th>
-                Time
-              </th>
-              <th>
-                Comment
-              </th>
+                <th>
+                    Name
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Time
+                </th>
+                <th>
+                    Comment
+                </th>
             </tr>
             <tr>
-              <td>
-                WAITSIG
-              </td>
-              <td>
-                Wait for an audio signal
-              </td>
-              <td>
-                Indefinite
-              </td>
-              <td>
-                Initial state when no input signal is present.
-              </td>
+                <td>
+                    WAITSIG
+                </td>
+                <td>
+                    Wait for an audio signal
+                </td>
+                <td>
+                    Indefinite
+                </td>
+                <td>
+                    Initial state when no input signal is present.
+                </td>
             </tr>
             <tr>
-              <td>
-                WAITSTB
-              </td>
-              <td>
-                Wait for beginning of 300 Hz start tone
-              </td>
-              <td>
-                Indefinite
-              </td>
-              <td>
-                Audio is present, monitoring for start tone.
-              </td>
+                <td>
+                    WAITSTB
+                </td>
+                <td>
+                    Wait for beginning of 300 Hz start tone
+                </td>
+                <td>
+                    Indefinite
+                </td>
+                <td>
+                    Audio is present, monitoring for start tone.
+                </td>
             </tr>
             <tr>
-              <td>
-                WAITSTE
-              </td>
-              <td>
-                Wait for end of 300 Hz start tone
-              </td>
-              <td>
-                5 seconds
-              </td>
-              <td>
-                Start tone is present, wait for end of tone.
-              </td>
+                <td>
+                    WAITSTE
+                </td>
+                <td>
+                    Wait for end of 300 Hz start tone
+                </td>
+                <td>
+                    5 seconds
+                </td>
+                <td>
+                    Start tone is present, wait for end of tone.
+                </td>
             </tr>
             <tr>
-              <td>
-                WAITLS1
-              </td>
-              <td>
-                Wait for local line beginning
-              </td>
-              <td>
-                Less than 1/2 second
-              </td>
-              <td>
-                Local synchronization with line rate.
-              </td>
+                <td>
+                    WAITLS1
+                </td>
+                <td>
+                    Wait for local line beginning
+                </td>
+                <td>
+                    Less than 1/2 second
+                </td>
+                <td>
+                    Local synchronization with line rate.
+                </td>
             </tr>
             <tr>
-              <td>
-                SYNC
-              </td>
-              <td>
-                Horizontal synchronization interval
-              </td>
-              <td>
-                20 seconds (U.S.)
-              </td>
-              <td>
-                Acquire correction value to horizontally synchronize with transmitter.
-              </td>
+                <td>
+                    SYNC
+                </td>
+                <td>
+                    Horizontal synchronization interval
+                </td>
+                <td>
+                    20 seconds (U.S.)
+                </td>
+                <td>
+                    Acquire correction value to horizontally synchronize with transmitter.
+                </td>
             </tr>
             <tr>
-              <td>
-                WAITLS2
-              </td>
-              <td>
-                Wait for local line beginning
-              </td>
-              <td>
-                Less than 1/2 second
-              </td>
-              <td>
-                Adjust local line beginning to correspond to correction value acquired during SYNC.
-              </td>
+                <td>
+                    WAITLS2
+                </td>
+                <td>
+                    Wait for local line beginning
+                </td>
+                <td>
+                    Less than 1/2 second
+                </td>
+                <td>
+                    Adjust local line beginning to correspond to correction value acquired during SYNC.
+                </td>
             </tr>
             <tr>
-              <td>
-                PROC
-              </td>
-              <td>
-                Process image lines, monitor for 450 Hz end tone
-              </td>
-              <td>
-                Duration of image
-              </td>
-              <td>
-                Acquire image scan lines and assemble into graphic image, listen for 450 Hz end tone.
-              </td>
+                <td>
+                    PROC
+                </td>
+                <td>
+                    Process image lines, monitor for 450 Hz end tone
+                </td>
+                <td>
+                    Duration of image
+                </td>
+                <td>
+                    Acquire image scan lines and assemble into graphic image, listen for 450 Hz end tone.
+                </td>
             </tr>
             <tr>
-              <td>
-                END
-              </td>
-              <td>
-                End of sequence
-              </td>
-              <td>
-                Brief
-              </td>
-              <td>
-                Halt reception, save assembled image to disk, return to WAITSIG state.
-              </td>
+                <td>
+                    END
+                </td>
+                <td>
+                    End of sequence
+                </td>
+                <td>
+                    Brief
+                </td>
+                <td>
+                    Halt reception, save assembled image to disk, return to WAITSIG state.
+                </td>
             </tr>
-          </table>
-          
-          <p><b>Start/Stop Tone Detection</b></p>
-          
-          <div class="article_graphic">
+        </table>
+
+        <p><b>Start/Stop Tone Detection</b></p>
+
+        <div class="article_graphic">
             <img src="../graphics/goertzel_response_graph.png" width="500" height="400" title="" alt=""/><br/>
             <div align="center">Figure 10: JWX start tone response</div>
-          </div>
-          
-          <p>A classic weakness in conventional radiofax receivers is reliable detection of the 300 Hz start and 450 Hz stop tones. Often a receiver will fail to detect a start tone and miss a chart, or will fail to detect a stop tone and continue receiving after the chart is complete. Efforts to solve these problems often result in detection of nonexistent start or stop tones.</p>
-          
-          <p>In conventional electronic receiver designs (i.e. "hardware radios") it is extraordinarily difficult to create a tone detector that is sufficiently selective and stable without adding unacceptable cost and complexity to the design. But in software radios like JWX, such problems are easily solved by adding a few lines of code.</p>
-          
-          <p>To detect the fax start and stop tones, JWX uses a special kind of DFT (Discrete Fourier Transform) meant to detect just one frequency with very high selectivity. Called the "Goertzel Algorithm", this method is ideal for fax tone detection — it is simple and can be made very selective, meaning it isn't likely to confuse image data or noise, and a legitimate tone.</p>
-          
-          <p>In tests using on-air signals, and with some adjustment of the tone-detection threshold setting described above, this detection method has more than proved itself, often successfully detecting start and stop tones in the presence of so much radio noise and interference that the received chart was itself barely readable.</p>
-          
-          <p><b>Clock Calibration</b></p>
-          
-          
-          <p>The value in the JWX clock calibration window corresponds to an absolute clock error in this way:</p>
-          
-          <blockquote>
+        </div>
+
+        <p>A classic weakness in conventional radiofax receivers is reliable detection of the 300 Hz start and 450 Hz
+            stop tones. Often a receiver will fail to detect a start tone and miss a chart, or will fail to detect a
+            stop tone and continue receiving after the chart is complete. Efforts to solve these problems often result
+            in detection of nonexistent start or stop tones.</p>
+
+        <p>In conventional electronic receiver designs (i.e. "hardware radios") it is extraordinarily difficult to
+            create a tone detector that is sufficiently selective and stable without adding unacceptable cost and
+            complexity to the design. But in software radios like JWX, such problems are easily solved by adding a few
+            lines of code.</p>
+
+        <p>To detect the fax start and stop tones, JWX uses a special kind of DFT (Discrete Fourier Transform) meant to
+            detect just one frequency with very high selectivity. Called the "Goertzel Algorithm", this method is ideal
+            for fax tone detection — it is simple and can be made very selective, meaning it isn't likely to confuse
+            image data or noise, and a legitimate tone.</p>
+
+        <p>In tests using on-air signals, and with some adjustment of the tone-detection threshold setting described
+            above, this detection method has more than proved itself, often successfully detecting start and stop tones
+            in the presence of so much radio noise and interference that the received chart was itself barely
+            readable.</p>
+
+        <p><b>Clock Calibration</b></p>
+
+
+        <p>The value in the JWX clock calibration window corresponds to an absolute clock error in this way:</p>
+
+        <blockquote>
             <b>v = 1 - a/b</b>
-          </blockquote>
-          Where:
-          
-          <ul>
+        </blockquote>
+        Where:
+
+        <ul>
             <li>v = JWX clock correction number</li>
             <li>a = Local clock rate</li>
             <li>b = Remote clock rate</li>
-          </ul>
-          
-          <p>This equation can be used to directly produce a correction number for known clock error rates without requiring the clock calibration procedure.</p>
-          
-        </blockquote>
-        
-        
-        
-        <a name="Version_History"></a><span class="article_subtopic">Version History</span>
-        
-        <blockquote>
-          <ul>
-          <li>02-28-2013 Version 2.8. Changed chart storage directory to (user home directory)/.JWX/charts, to keep from inadvertently deleting the initialization file located at (user home directory)/.JWX/JWX.ini.</li>
-            <li>07-05-2012 Version 2.7. Added a feature to delete old charts, fixed a bug that prevented automatic chart saving on exit.</li>
-            <li>04-11-2011 Version 2.6. Changed the output image width to 1810 pixels for consistency with weatherfax standards.</li>
-            <li>03-26-2011 Version 2.5. Fixed a couple of small bugs, adjusted the phase-locked loop for better fidelity.</li>
-            <li>03-25-2011 Version 2.4. Fine-tuned the PLL's parameters to better fit the nature of the Radiofax signal.</li>
-            <li>03-24-2011 Version 2.3. Replaced existing FM detection scheme with a phase-locked loop for a big improvement in image quality.</li>
-            <li>03-16-2011 Version 2.2. Recoded the FM detector scheme to take advantage of my experience designing <a href="../JNX/index.html">JNX</a>, which also needed to detect FM in much the same way. The result is much better image appearance at low data rates. Had to abandon the automatic frequency control feature, which never worked very well anyway.</li>
-            <li>03-16-2011 Version 2.1. Fixed a threshold-sense bug that crept in during a number of recent small changes.</li>
+        </ul>
+
+        <p>This equation can be used to directly produce a correction number for known clock error rates without
+            requiring the clock calibration procedure.</p>
+
+    </blockquote>
+
+
+    <a name="Version_History"></a><span class="article_subtopic">Version History</span>
+
+    <blockquote>
+        <ul>
+            <li>02-28-2013 Version 2.8. Changed chart storage directory to (user home directory)/.JWX/charts, to keep
+                from inadvertently deleting the initialization file located at (user home directory)/.JWX/JWX.ini.
+            </li>
+            <li>07-05-2012 Version 2.7. Added a feature to delete old charts, fixed a bug that prevented automatic chart
+                saving on exit.
+            </li>
+            <li>04-11-2011 Version 2.6. Changed the output image width to 1810 pixels for consistency with weatherfax
+                standards.
+            </li>
+            <li>03-26-2011 Version 2.5. Fixed a couple of small bugs, adjusted the phase-locked loop for better
+                fidelity.
+            </li>
+            <li>03-25-2011 Version 2.4. Fine-tuned the PLL's parameters to better fit the nature of the Radiofax
+                signal.
+            </li>
+            <li>03-24-2011 Version 2.3. Replaced existing FM detection scheme with a phase-locked loop for a big
+                improvement in image quality.
+            </li>
+            <li>03-16-2011 Version 2.2. Recoded the FM detector scheme to take advantage of my experience designing <a
+                    href="../JNX/index.html">JNX</a>, which also needed to detect FM in much the same way. The result is
+                much better image appearance at low data rates. Had to abandon the automatic frequency control feature,
+                which never worked very well anyway.
+            </li>
+            <li>03-16-2011 Version 2.1. Fixed a threshold-sense bug that crept in during a number of recent small
+                changes.
+            </li>
             <li>03-02-2011 Version 2.0. Added a button that closes all inactive charts at once.</li>
-            <li>02-27-2011 Version 1.9. Detected and adapted to a system audio-stream error that only appears after 4 1/2 hours of continuous operation.</li>
-            <li>02-25-2011 Version 1.8. Corrected a coding error that would cause problems in a continuous multi-day run, fixed a number of other small bugs.</li>
-            <li>02-24-2011 Version 1.7. Recoded the audio input/output channel access scheme to show descriptions of the channels as tooltips over the selection lists. This helps in sorting out which inputs and outputs have been selected.</li>
-            <li>02-24-2011 Version 1.6. Corrected a thread-related bug that, on certain Java runtime engines, used up too much processor time.</li>
-            <li>02-23-2011 Version 1.5. Performed more optimizations, cleaned up some code sections and fixed a handful of small bugs.</li>
-            <li>02-22-2011 Version 1.4. Reworked the audio channel configuration scheme for more operational flexibility.</li>
-            <li>02-21-2011 Version 1.3. Performed some time and memory usage optimizations on critical code sections.</li>
-            <li>02-20-2011 Version 1.2. Made a number of interface improvements and refactored the signal-handling sections.</li>
+            <li>02-27-2011 Version 1.9. Detected and adapted to a system audio-stream error that only appears after 4
+                1/2 hours of continuous operation.
+            </li>
+            <li>02-25-2011 Version 1.8. Corrected a coding error that would cause problems in a continuous multi-day
+                run, fixed a number of other small bugs.
+            </li>
+            <li>02-24-2011 Version 1.7. Recoded the audio input/output channel access scheme to show descriptions of the
+                channels as tooltips over the selection lists. This helps in sorting out which inputs and outputs have
+                been selected.
+            </li>
+            <li>02-24-2011 Version 1.6. Corrected a thread-related bug that, on certain Java runtime engines, used up
+                too much processor time.
+            </li>
+            <li>02-23-2011 Version 1.5. Performed more optimizations, cleaned up some code sections and fixed a handful
+                of small bugs.
+            </li>
+            <li>02-22-2011 Version 1.4. Reworked the audio channel configuration scheme for more operational
+                flexibility.
+            </li>
+            <li>02-21-2011 Version 1.3. Performed some time and memory usage optimizations on critical code sections.
+            </li>
+            <li>02-20-2011 Version 1.2. Made a number of interface improvements and refactored the signal-handling
+                sections.
+            </li>
             <li>02-19-2011 Version 1.1. Fixed a number of small bugs and optimized some critical sections.</li>
             <li>02-18-2011 Version 1.0. Initial Public Release.</li>
-          </ul>
-        </blockquote>
-        
-        <!-- END_INSERT -->
-    
-    
+        </ul>
+    </blockquote>
+
+    <!-- END_INSERT -->
+
+
     <a name="Resources"></a><span class="article_subtopic">Resources</span>
     <blockquote>
-      
-      <p>Here are some JWX-related resource locations specific to your system:</p>
-      
-      
-      
-      <p>
+
+        <p>Here are some JWX-related resource locations specific to your system:</p>
+
+
+        <p>
         <blockquote>
-          <table class="present bordered" cellspacing="-1" cellpadding="4">
-            <tr>
-              <th>
-                <div align="center"><b>Resource</b></div>
-              </th>
-              <th>
-                <div align="center"><b>Location</b></div>
-              </th>
-            </tr>
-            <tr>
-              <td>
-                JWX Home Page
-              </td>
-              <td>
-                <a href="http://arachnoid.com/JWX">http://arachnoid.com/JWX</a>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                JWX version
-              </td>
-              <td>
-                (version)
-              </td>
-            </tr>
-            <tr>
-              <td>
-                User home directory
-              </td>
-              <td>
-                (user home directory)
-              </td>
-            </tr>
-            <tr>
-              <td>
-                JWX data directory location
-              </td>
-              <td>
-                (data path)
-              </td>
-            </tr>
-            <tr>
-              <td>
-                JWX chart directory location
-              </td>
-              <td>
-                (chart path)
-              </td>
-            </tr>
-            <tr>
-              <td>
-                JWX configuration file location
-              </td>
-              <td>
-                (configuration path)
-              </td>
-            </tr>
-            <tr>
-              <td>
-                Currently running JWX application location
-              </td>
-              <td>
-                (application path)
-              </td>
-            </tr>
-          </table>
+            <table class="present bordered" cellspacing="-1" cellpadding="4">
+                <tr>
+                    <th>
+                        <div align="center"><b>Resource</b></div>
+                    </th>
+                    <th>
+                        <div align="center"><b>Location</b></div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        JWX Home Page
+                    </td>
+                    <td>
+                        <a href="http://arachnoid.com/JWX">http://arachnoid.com/JWX</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        JWX version
+                    </td>
+                    <td>
+                        (version)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        User home directory
+                    </td>
+                    <td>
+                        (user home directory)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        JWX data directory location
+                    </td>
+                    <td>
+                        (data path)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        JWX chart directory location
+                    </td>
+                    <td>
+                        (chart path)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        JWX configuration file location
+                    </td>
+                    <td>
+                        (configuration path)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Currently running JWX application location
+                    </td>
+                    <td>
+                        (application path)
+                    </td>
+                </tr>
+            </table>
         </blockquote>
-      </p>
-      
-      
-      
-      
     </blockquote>
-    
-  </body>
+</blockquote>
+</body>
 </html>
