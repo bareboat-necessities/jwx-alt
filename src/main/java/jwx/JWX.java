@@ -28,7 +28,6 @@ package jwx;
 import javax.swing.*;
 import java.util.*;
 import java.util.Timer;
-import java.util.TimerTask;
 import java.io.*;
 import java.text.*;
 import java.net.*;
@@ -40,18 +39,18 @@ import javax.sound.sampled.*;
  */
 final public class JWX extends javax.swing.JFrame {
 
-    boolean debug;
+    final boolean debug;
     final String VERSION = "3.0";
-    List<String> data_rates = Arrays.asList(
+    final List<String> data_rates = Arrays.asList(
             "8000", "12000", "16000", "24000", "32000", "48000", "96000");
-    String default_rate = "24000";
-    String default_thresh = "50";
-    String default_volume = "0";
-    int delete_hours = 48;
-    int max_open_charts = 16;
+    final String default_rate = "24000";
+    final String default_thresh = "50";
+    final String default_volume = "0";
+    final int delete_hours = 48;
+    final int max_open_charts = 16;
     ConfigManager config_mgr;
-    DecodeFax decode_fax;
-    AudioProcessor audio_processor;
+    final DecodeFax decode_fax;
+    final AudioProcessor audio_processor;
     ToggleButtonController grayscale, afc, fullscale, scroll_to_bottom, filter;
     ComboBoxController data_rate, threshold, monitor_volume, audio_input, audio_output;
     CalibrationController calibration;
@@ -59,12 +58,12 @@ final public class JWX extends javax.swing.JFrame {
     final String app_path, app_name, program_name, user_dir, data_path, chart_path, init_path, file_sep;
     // the default image width is based on the IOC = Index of Coooperation
     // IOC 576 originates in the old mechanical fax drum diameter, and 576 * pi = 1809.557
-    int default_image_width = 1810;
-    int timer_period_ms = 500;
+    final int default_image_width = 1810;
+    final int timer_period_ms = 500;
     long old_samplecount = 0;
-    List<ChartPanel> chart_list;
+    final List<ChartPanel> chart_list;
     int chart_number = 0;
-    Timer periodic_timer;
+    final Timer periodic_timer;
     ChartPanel current_chart = null;
     HelpPane help_pane = null;
     boolean scaled_images;
@@ -100,13 +99,7 @@ final public class JWX extends javax.swing.JFrame {
         audio_processor = new AudioProcessor(this);
         setup_values();
         checkOldCharts();
-        Runtime.getRuntime().addShutdownHook(new Thread() {
-
-            @Override
-            public void run() {
-                inner_close();
-            }
-        });
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> inner_close()));
         // these next two must be created in displayed order
         decode_fax = new DecodeFax(this);
         decode_fax.init_chart_read(true);
@@ -235,9 +228,7 @@ final public class JWX extends javax.swing.JFrame {
 
     private <T> List<String> make_string_list(List<T> data) {
         List<String> out = new ArrayList<>();
-        data.forEach((T item) -> {
-            out.add(item.toString());
-        });
+        data.forEach((T item) -> out.add(item.toString()));
         return out;
     }
 
@@ -246,9 +237,7 @@ final public class JWX extends javax.swing.JFrame {
         if (extra != null) {
             out.add(extra);
         }
-        data.forEach((item) -> {
-            out.add(item.getDescription());
-        });
+        data.forEach((item) -> out.add(item.getDescription()));
 
         return out;
     }
@@ -494,7 +483,7 @@ final public class JWX extends javax.swing.JFrame {
         int n = dlist.size();
         if (n > 0) {
             if (CommonCode.ask_user(this, "Okay to delete " + n + " chart(s) older than " + delete_hours + " hours?", "Delete old charts")) {
-                dlist.forEach((file) -> file.delete());
+                dlist.forEach(File::delete);
             }
         } else {
             CommonCode.tell_user(this, "There are no charts older than " + delete_hours + " hours.", "Delete old charts");
@@ -588,11 +577,7 @@ final public class JWX extends javax.swing.JFrame {
         });
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        tabbed_pane.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                tabbed_paneStateChanged(evt);
-            }
-        });
+        tabbed_pane.addChangeListener(evt -> tabbed_paneStateChanged(evt));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -950,9 +935,7 @@ final public class JWX extends javax.swing.JFrame {
             // Default to system-specific L&F
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
-            java.awt.EventQueue.invokeLater(() -> {
-                new JWX(args).setVisible(true);
-            });
+            java.awt.EventQueue.invokeLater(() -> new JWX(args).setVisible(true));
         } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             System.out.println("main: " + e);
         }

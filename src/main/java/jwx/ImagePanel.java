@@ -31,18 +31,18 @@ import javax.swing.*;
  */
 public class ImagePanel extends javax.swing.JPanel {
 
-    ChartPanel parent;
+    final ChartPanel parent;
     BufferedImage buffered_image = null;
     java.util.List<byte[]> image_array;
     int height;
     int width;
     byte[] bbuffer = null;
     int bbuffer_height = 0;
-    int block_size = 400;
+    final int block_size = 400;
     int old_line = 0;
     int imagew, imageh;
     int scaledw, scaledh;
-    File file;
+    final File file;
     boolean receiving_fax;
     double image_scale = 1.0;
     int mousex, mousey;
@@ -262,9 +262,7 @@ public class ImagePanel extends javax.swing.JPanel {
 
     private java.util.List<byte[]> translate_image(java.util.List<byte[]> src, int delta) {
         java.util.List<byte[]> b = new java.util.ArrayList<>();
-        src.forEach((a) -> {
-            b.add(CommonCode.translate_line(a, delta));
-        });
+        src.forEach((a) -> b.add(CommonCode.translate_line(a, delta)));
         return b;
     }
 

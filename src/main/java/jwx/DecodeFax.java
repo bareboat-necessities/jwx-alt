@@ -25,8 +25,8 @@ package jwx;
  */
 final public class DecodeFax {
 
-    JWX parent;
-    double goertzel_accept;
+    final JWX parent;
+    final double goertzel_accept;
     GoertzelFilter gstart = null;
     GoertzelFilter gend = null;
     ChartPanel chart_panel;
@@ -44,7 +44,7 @@ final public class DecodeFax {
         END
     }
 
-    MachineState[] machine_states = {
+    final MachineState[] machine_states = {
         new s_waitsig(),
         new s_waitstb(),
         new s_waitste(),
@@ -70,7 +70,7 @@ final public class DecodeFax {
     double gain_level;
     double gain_tc;
     double cf;
-    double invsqr2 = 1.0 / Math.sqrt(2);
+    final double invsqr2 = 1.0 / Math.sqrt(2);
     double rcvr_mark, rcvr_space;
     double rcvr_dev, ms_q, bp_q;
     double startf;
@@ -78,7 +78,7 @@ final public class DecodeFax {
     double wsig;
     double sig;
     double g_size;
-    double g_gain_adjust = 0.5;
+    final double g_gain_adjust = 0.5;
     double time_sec;
     long sample_count;
     long line_time_zero_count;
@@ -102,18 +102,18 @@ final public class DecodeFax {
     double pll_integral = 0;
     double pll_reference = 0;
     double pll_loop_control;
-    double pll_loop_gain = 1;
-    double pll_center_f = 1900.0;
-    double pll_deviation_f = 400.0;
+    final double pll_loop_gain = 1;
+    final double pll_center_f = 1900.0;
+    final double pll_deviation_f = 400.0;
     // produce a unit output level at maximum deviation
     // plus 20% to improve appearance of charts
-    double pll_output_gain = 1.2 * pll_center_f / pll_deviation_f;
-    double pll_omega = 2 * Math.PI * pll_center_f;
+    final double pll_output_gain = 1.2 * pll_center_f / pll_deviation_f;
+    final double pll_omega = 2 * Math.PI * pll_center_f;
     //double pll_loop_lowpass_filter_f = 1900;
     // bandwidth is 1728 Hz per line, 3456 Hz / second
     // times 2 (Nyquist-Shannon) = 6912 Hz
-    double pll_output_lowpass_filter_f = 650;
-    double pll_video_lowpass_filter_f = 400;
+    final double pll_output_lowpass_filter_f = 650;
+    final double pll_video_lowpass_filter_f = 400;
     //BiQuadraticFilter biquad_pll_loop_lowpass;
     BiQuadraticFilter biquad_pll_output_lowpass;
     BiQuadraticFilter biquad_video_lowpass;

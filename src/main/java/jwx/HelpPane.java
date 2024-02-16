@@ -42,15 +42,15 @@ import javax.swing.text.html.*;
 final public class HelpPane extends javax.swing.JPanel {
 
     static final long serialVersionUID = 8413;
-    JWX parent;
-    Stack<Integer> undoStack;
-    Stack<Integer> redoStack;
+    final JWX parent;
+    final Stack<Integer> undoStack;
+    final Stack<Integer> redoStack;
     Document doc;
     String oldSearch = "";
     int oldPos = 0;
     Object oldHighlight = null;
-    Highlighter highlighter;
-    Highlighter.HighlightPainter highlightPainter;
+    final Highlighter highlighter;
+    final Highlighter.HighlightPainter highlightPainter;
 
     /** Creates new form MyHelpPane
      * @param p */
@@ -68,9 +68,7 @@ final public class HelpPane extends javax.swing.JPanel {
     }
 
     void setFocus() {
-        SwingUtilities.invokeLater(() -> {
-            findTextField.requestFocus();
-        });
+        SwingUtilities.invokeLater(() -> findTextField.requestFocus());
     }
 
     // help resource related
@@ -297,11 +295,7 @@ final public class HelpPane extends javax.swing.JPanel {
         helpTextPane.setContentType("text/html");
         helpTextPane.setEditable(false);
         helpTextPane.setFocusable(false);
-        helpTextPane.addHyperlinkListener(new javax.swing.event.HyperlinkListener() {
-            public void hyperlinkUpdate(javax.swing.event.HyperlinkEvent evt) {
-                helpTextPaneHyperlinkUpdate(evt);
-            }
-        });
+        helpTextPane.addHyperlinkListener(evt -> helpTextPaneHyperlinkUpdate(evt));
         helpScrollPane.setViewportView(helpTextPane);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

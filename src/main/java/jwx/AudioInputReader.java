@@ -51,17 +51,17 @@ import java.nio.*;
  */
 final class AudioInputReader extends Thread {
 
-    AudioProcessor audio_processor;
-    JWX parent;
+    final AudioProcessor audio_processor;
+    final JWX parent;
     TargetDataLine targetDataLine = null;
     double dv;
     final int mask = 0xff;
-    short[] short_buf;
-    byte[] byte_buf;
-    int word_size;
+    final short[] short_buf;
+    final byte[] byte_buf;
+    final int word_size;
     int avail;
     // reset audio stream once per hour when idle
-    double restart_cycle_time_sec = 3600;
+    final double restart_cycle_time_sec = 3600;
 
     public AudioInputReader(AudioProcessor ap, JWX p, int ws) {
         audio_processor = ap;
@@ -72,7 +72,7 @@ final class AudioInputReader extends Thread {
         short_buf = new short[audio_processor.sbufsz];
     }
 
-    private boolean open_target_line() {
+    private void open_target_line() {
         try {
             if (targetDataLine == null) {
                 Mixer.Info mi;
@@ -93,9 +93,7 @@ final class AudioInputReader extends Thread {
             targetDataLine = null;
             CommonCode.p("open_target_line: " + e);
             audio_processor.read_valid = false;
-            return false;
         }
-        return true;
     }
 
     private void close_target_line() {

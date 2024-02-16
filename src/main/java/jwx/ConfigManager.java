@@ -21,7 +21,6 @@ package jwx;
 
 import javax.swing.*;
 import java.lang.reflect.*;
-import java.util.*;
 import java.util.regex.*;
 import java.util.concurrent.*;
 import java.io.*;
@@ -32,10 +31,10 @@ import java.io.*;
  */
 final public class ConfigManager {
 
-    String line_sep;
-    String init_path;
-    JFrame parent;
-    Pattern pat;
+    final String line_sep;
+    final String init_path;
+    final JFrame parent;
+    final Pattern pat;
     Matcher mat;
     ConcurrentSkipListMap<String, ControlInterface> map;
 

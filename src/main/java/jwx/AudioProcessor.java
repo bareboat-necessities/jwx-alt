@@ -28,7 +28,7 @@ import java.nio.*;
  */
 final public class AudioProcessor {
 
-    JWX parent;
+    final JWX parent;
     SourceDataLine audioOutputLine = null;
     AudioFormat audioFormat = null;
     // must be 2 bytes -- windows XP doesn't support 32 bits
@@ -38,12 +38,14 @@ final public class AudioProcessor {
     boolean read_enable = false;
     AudioInputReader audio_reader = null;
     final byte[] out_buffer = new byte[bbufsz];
-    Line.Info targetLineInfo;
-    Line.Info sourceLineInfo;
+    final Line.Info targetLineInfo;
+    final Line.Info sourceLineInfo;
     boolean read_valid = false;
     boolean write_valid = false;
-    java.util.List<Mixer.Info> source_mixer_list, target_mixer_list;
-    int source_mixer_count, target_mixer_count;
+    final java.util.List<Mixer.Info> source_mixer_list;
+    final java.util.List<Mixer.Info> target_mixer_list;
+    final int source_mixer_count;
+    final int target_mixer_count;
     int target_mixer_index = -1;
     int source_mixer_index = -1;
     int new_index = -1;

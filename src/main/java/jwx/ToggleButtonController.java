@@ -28,16 +28,14 @@ import javax.swing.*;
  */
 final public class ToggleButtonController implements ControlInterface {
 
-    JToggleButton box;
+    final JToggleButton box;
     boolean value;
 
     public ToggleButtonController(JToggleButton b, boolean v) {
         box = b;
         box.setSelected(v);
         value = v;
-        box.addItemListener((java.awt.event.ItemEvent evt) -> {
-            item_state_changed();
-        });
+        box.addItemListener((java.awt.event.ItemEvent evt) -> item_state_changed());
     }
 
     private void item_state_changed() {

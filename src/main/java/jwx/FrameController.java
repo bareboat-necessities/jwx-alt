@@ -28,8 +28,8 @@ import java.util.regex.*;
  */
 final public class FrameController implements ControlInterface {
 
-    JFrame frame;
-    Pattern pat;
+    final JFrame frame;
+    final Pattern pat;
 
     public FrameController(JFrame f) {
         frame = f;

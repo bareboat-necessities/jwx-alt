@@ -27,8 +27,8 @@ import javax.swing.*;
  */
 final public class CalibrationController implements ControlInterface {
 
-    JWX parent;
-    JTextField field;
+    final JWX parent;
+    final JTextField field;
     private String value;
     private double dvalue = 0;
 

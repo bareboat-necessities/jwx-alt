@@ -19,7 +19,7 @@ import javax.swing.ListCellRenderer;
 public class MyComboBoxRenderer<E> extends JLabel implements ListCellRenderer<E> {
 
     static final long serialVersionUID = 9379;
-    ArrayList<java.lang.String> tooltips;
+    final ArrayList<java.lang.String> tooltips;
     
     public MyComboBoxRenderer(ArrayList<java.lang.String> tt) {
         tooltips = tt;

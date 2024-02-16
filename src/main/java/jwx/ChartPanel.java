@@ -29,11 +29,11 @@ import javax.swing.*;
  */
 final public class ChartPanel extends javax.swing.JPanel {
 
-    JWX parent;
-    ImagePanel image_panel;
+    final JWX parent;
+    final ImagePanel image_panel;
     boolean old_scaled;
     int old_cal_phase = -1;
-    double calibration_val;
+    final double calibration_val;
     static final long serialVersionUID = 18345;
 
     /** Creates new form ChartPanel
