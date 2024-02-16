@@ -100,7 +100,7 @@ final public class ComboBoxController implements ControlInterface {
     private void scan_string(String s) {
         try {
             value = Integer.parseInt(s);
-            dvalue = (double) value;
+            dvalue = value;
             percent_value = (double) value / 100.0;
         } catch (NumberFormatException e) {
             System.out.println(e);

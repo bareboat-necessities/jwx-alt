@@ -40,7 +40,7 @@ import javax.sound.sampled.*;
  */
 final public class JWX extends javax.swing.JFrame {
 
-    boolean debug = false;
+    boolean debug;
     final String VERSION = "3.0";
     List<String> data_rates = Arrays.asList(
             "8000", "12000", "16000", "24000", "32000", "48000", "96000");
@@ -50,7 +50,7 @@ final public class JWX extends javax.swing.JFrame {
     int delete_hours = 48;
     int max_open_charts = 16;
     ConfigManager config_mgr;
-    DecodeFax decode_fax = null;
+    DecodeFax decode_fax;
     AudioProcessor audio_processor;
     ToggleButtonController grayscale, afc, fullscale, scroll_to_bottom, filter;
     ComboBoxController data_rate, threshold, monitor_volume, audio_input, audio_output;
@@ -76,7 +76,7 @@ final public class JWX extends javax.swing.JFrame {
 
     /** Creates new form JWX
      * @param args */
-    public JWX(String args[]) {
+    public JWX(String[] args) {
         initComponents();
         debug = (args.length > 0 && args[0].equals("-d"));
         app_name = getClass().getSimpleName();
@@ -170,29 +170,29 @@ final public class JWX extends javax.swing.JFrame {
     }
 
     private void set_audio_status() {
-        String vl = " Audio: ";
+        StringBuilder vl = new StringBuilder(" Audio: ");
         if (audio_processor.read_valid()) {
             double v = decode_fax.gain_level;
             int iv = (int) (Math.sqrt(v) / 14.0);
             if (v < 1.0) {
-                vl += "None";
+                vl.append("None");
             } else if (iv < 1) {
-                vl += "Low";
+                vl.append("Low");
             } else if (iv > 11) {
-                vl += "*** High ***";
+                vl.append("*** High ***");
             } else {
                 for (int i = 0; i < iv; i++) {
-                    vl += "|";
+                    vl.append("|");
                 }
             }
         } else {
             if (decode_fax.enabled()) {
-                vl += "Error";
+                vl.append("Error");
             } else {
-                vl += "Standby";
+                vl.append("Standby");
             }
         }
-        this.audio_status_label.setText(vl);
+        this.audio_status_label.setText(vl.toString());
     }
 
     private void set_machine_status() {
@@ -336,9 +336,7 @@ final public class JWX extends javax.swing.JFrame {
         tabbed_pane.remove(comp);
         if (comp instanceof ChartPanel) {
             ChartPanel cp = (ChartPanel) comp;
-            if (chart_list.contains(cp)) {
-                chart_list.remove(cp);
-            }
+            chart_list.remove(cp);
         }
     }
 
@@ -347,7 +345,7 @@ final public class JWX extends javax.swing.JFrame {
     }
 
     public void calibrate_control(int source, double x, double y) {
-        double cval = 0;
+        double cval;
         switch (source) {
             case 0: // button
                 if (calibrate_phase == 0) {
@@ -443,7 +441,7 @@ final public class JWX extends javax.swing.JFrame {
                 stringBuilder.append("\n");
             }
             scanner.close();
-        } catch (FileNotFoundException e) {
+        } catch (FileNotFoundException ignored) {
         }
         return stringBuilder.toString();
     }
@@ -463,20 +461,13 @@ final public class JWX extends javax.swing.JFrame {
             // copy list to avoid concurrent modification exception
             List<ChartPanel> temp;
             temp = new ArrayList<>();
-            chart_list.stream().filter((cp) -> (!cp.image_panel.receiving_fax())).forEachOrdered((cp) -> {
-                temp.add(cp);
-            });
-            temp.stream().map((cp) -> {
-                cp.save_file();
-                return cp;
-            }).forEachOrdered((cp) -> {
-                remove_tab(cp);
-            });
+            chart_list.stream().filter((cp) -> (!cp.image_panel.receiving_fax())).forEachOrdered(temp::add);
+            temp.stream().peek(ChartPanel::save_file).forEachOrdered(this::remove_tab);
         }
     }
 
     private ArrayList<File> getOldChartList() {
-        final long delta_t = delete_hours * 60 * 60 * 1000;
+        final long delta_t = (long) delete_hours * 60 * 60 * 1000;
         final long now = new Date().getTime();
         File dp = new File(chart_path);
         FilenameFilter ff;
@@ -954,7 +945,7 @@ final public class JWX extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(final String args[]) {
+    public static void main(final String[] args) {
         try {
             // Default to system-specific L&F
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

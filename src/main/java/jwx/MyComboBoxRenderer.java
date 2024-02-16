@@ -43,4 +43,4 @@ public class MyComboBoxRenderer<E> extends JLabel implements ListCellRenderer<E>
             setText((value == null) ? "" : value.toString());
             return this;
         }
-    };
+    }

@@ -26,7 +26,7 @@ package jwx;
  */
 public interface ControlInterface {
 
-    public void set_value(String s);
+    void set_value(String s);
 
     //public String toString();
 }

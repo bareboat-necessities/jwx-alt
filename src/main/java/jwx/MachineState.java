@@ -25,5 +25,5 @@ package jwx;
  * @author lutusp
  */
 public interface MachineState {
-    public boolean exec();
+    boolean exec();
 }

@@ -30,7 +30,7 @@ final public class BiQuadraticFilter {
     public enum Type {
 
         BANDPASS, LOWPASS, HIGHPASS, NOTCH, PEAK, LOWSHELF, HIGHSHELF
-    };
+    }
     double a0, a1, a2, b0, b1, b2;
     double x1, x2, y, y1, y2;
     double gain_abs;

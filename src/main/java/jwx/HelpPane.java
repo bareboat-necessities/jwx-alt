@@ -200,7 +200,7 @@ final public class HelpPane extends javax.swing.JPanel {
                     // aim for the middle of the screen
                     int pos = r.y - helpScrollPane.getHeight() / 2;
                     // but don't try for the impossible
-                    pos = (pos < 0) ? 0 : pos;
+                    pos = Math.max(pos, 0);
                     helpScrollPane.getVerticalScrollBar().setValue(pos);
                     // now highlight the found text in our nonfocused text pane
                     oldHighlight = highlighter.addHighlight(p, p + slen, highlightPainter);

@@ -42,7 +42,8 @@ final public class DecodeFax {
         WAITLS2,
         PROC,
         END
-    };
+    }
+
     MachineState[] machine_states = {
         new s_waitsig(),
         new s_waitstb(),
@@ -256,7 +257,7 @@ final public class DecodeFax {
             }
             return false;
         }
-    };
+    }
 
     final class s_waitstb implements MachineState {
 
@@ -273,7 +274,7 @@ final public class DecodeFax {
             }
             return false;
         }
-    };
+    }
 
     final class s_waitste implements MachineState {
 
@@ -285,7 +286,7 @@ final public class DecodeFax {
             }
             return false;
         }
-    };
+    }
 
     final class s_waitls1 implements MachineState {
 
@@ -299,7 +300,7 @@ final public class DecodeFax {
             }
             return false;
         }
-    };
+    }
 
     final class s_sync implements MachineState {
 
@@ -368,7 +369,7 @@ final public class DecodeFax {
             }
             return false;
         }
-    };
+    }
 
     final class s_waitls2 implements MachineState {
 
@@ -389,7 +390,7 @@ final public class DecodeFax {
             }
             return false;
         }
-    };
+    }
 
     final class s_proc implements MachineState {
 
@@ -433,7 +434,7 @@ final public class DecodeFax {
             row_index++;
             return false;
         }
-    };
+    }
 
     final class s_end implements MachineState {
 
@@ -443,7 +444,7 @@ final public class DecodeFax {
             state = State.WAITSIG;
             return false;
         }
-    };
+    }
 
     public void save_chart() {
         if (chart_panel != null) {
