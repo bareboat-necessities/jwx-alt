@@ -26,7 +26,7 @@
 package jwx;
 
 import com.formdev.flatlaf.FlatLightLaf;
-import com.formdev.flatlaf.intellijthemes.FlatLightFlatIJTheme;
+import com.formdev.flatlaf.intellijthemes.FlatNordIJTheme;
 
 import javax.sound.sampled.Mixer;
 import javax.swing.*;
@@ -936,7 +936,7 @@ final public class JWX extends javax.swing.JFrame {
     public static void main(final String[] args) {
         try {
             FlatLightLaf.setup();
-            FlatLightFlatIJTheme.setup();
+            FlatNordIJTheme.setup();
             // Default to system-specific L&F
             //UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 
