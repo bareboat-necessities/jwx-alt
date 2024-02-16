@@ -1,0 +1,256 @@
+/***************************************************************************
+ *   Copyright (C) 2011 by Paul Lutus                                      *
+ *   lutusp@arachnoid.com                                                  *
+ *                                                                         *
+ *   This program is free software; you can redistribute it and/or modify  *
+ *   it under the terms of the GNU General Public License as published by  *
+ *   the Free Software Foundation; either version 2 of the License, or     *
+ *   (at your option) any later version.                                   *
+ *                                                                         *
+ *   This program is distributed in the hope that it will be useful,       *
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of        *
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *
+ *   GNU General Public License for more details.                          *
+ *                                                                         *
+ *   You should have received a copy of the GNU General Public License     *
+ *   along with this program; if not, write to the                         *
+ *   Free Software Foundation, Inc.,                                       *
+ *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
+ ***************************************************************************/
+package jwx;
+
+import java.awt.*;
+//import java.io.*;
+import javax.swing.*;
+
+/**
+ *
+ * @author lutusp
+ */
+final public class ChartPanel extends javax.swing.JPanel {
+
+    JWX parent;
+    ImagePanel image_panel;
+    boolean old_scaled;
+    int old_cal_phase = -1;
+    double calibration_val;
+    static final long serialVersionUID = 18345;
+
+    /** Creates new form ChartPanel
+     * @param p
+     * @param path
+     * @param cal_val */
+    public ChartPanel(JWX p, String path, double cal_val) {
+        parent = p;
+        calibration_val = cal_val;
+        initComponents();
+        image_panel = new ImagePanel(this, path);
+        chart_scroll_pane.setViewportView(image_panel);
+        old_scaled = !parent.fullscale.get_value();
+    }
+
+    public void save_file() {
+        image_panel.save_file();
+    }
+
+    public Dimension get_view_size() {
+        return chart_scroll_pane.getViewport().getExtentSize();
+    }
+
+    public JScrollBar get_vert_scroll_bar() {
+        return this.chart_scroll_pane.getVerticalScrollBar();
+    }
+
+    public void perform_periodic() {
+        if (old_scaled != parent.scaled_images) {
+            image_panel.set_image_scale();
+            old_scaled = parent.scaled_images;
+        }
+        boolean receiving = image_panel.receiving_fax();
+        close_button.setEnabled(!receiving);
+        rotate_cw_button.setEnabled(!receiving);
+        rotate_ccw_button.setEnabled(!receiving);
+        invert_button.setEnabled(!receiving);
+        save_button.setEnabled(image_panel.get_changed());
+        image_panel.scroll_test(false);
+        calibrate_actions();
+    }
+
+    private void calibrate_actions() {
+        if (parent.current_chart == this && old_cal_phase != parent.calibrate_phase) {
+            old_cal_phase = parent.calibrate_phase;
+            String tt;
+            switch (old_cal_phase) {
+                case 0:
+                    data_label.setOpaque(false);
+                    data_label.setText("");
+                    data_label.setToolTipText(image_panel.file.toString());
+                    image_panel.setToolTipText("");
+                    break;
+                case 1:
+                    data_label.setOpaque(true);
+                    data_label.setBackground(Color.green);
+                    data_label.setText("Calibrate 1: Right-click one end of a vertical feature.");
+                    tt = "<html>Calibrate 1: Right-click one end of a vertical feature<br/>or enter a value in the calibration window</html>";
+                    data_label.setToolTipText(tt);
+                    image_panel.setToolTipText(tt);
+                    break;
+                case 2:
+                    data_label.setOpaque(true);
+                    data_label.setBackground(Color.orange);
+                    tt = "Calibrate 2: Right-click the other end of the same vertical feature";
+                    data_label.setText(tt);
+                    image_panel.setToolTipText(tt);
+                    break;
+            }
+        }
+    }
+
+    public void set_data_label(String s) {
+        if (parent.calibrate_phase == 0) {
+            data_label.setText(s);
+        }
+    }
+
+    public void close() {
+        image_panel.save_file();
+        parent.remove_tab(this);
+    }
+
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    //@SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
+
+        control_panel = new javax.swing.JPanel();
+        data_label = new javax.swing.JLabel();
+        rotate_ccw_button = new javax.swing.JButton();
+        rotate_cw_button = new javax.swing.JButton();
+        invert_button = new javax.swing.JButton();
+        save_button = new javax.swing.JButton();
+        close_button = new javax.swing.JButton();
+        closeall_button = new javax.swing.JButton();
+        chart_scroll_pane = new javax.swing.JScrollPane();
+
+        setLayout(new java.awt.BorderLayout());
+
+        control_panel.setLayout(new java.awt.GridBagLayout());
+
+        data_label.setText("...");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        control_panel.add(data_label, gridBagConstraints);
+
+        rotate_ccw_button.setText("Rotate CCW");
+        rotate_ccw_button.setToolTipText("Rotate image counterclockwise");
+        rotate_ccw_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rotate_ccw_buttonMouseClicked(evt);
+            }
+        });
+        control_panel.add(rotate_ccw_button, new java.awt.GridBagConstraints());
+
+        rotate_cw_button.setText("Rotate CW");
+        rotate_cw_button.setToolTipText("Rotate Image clockwise");
+        rotate_cw_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                rotate_cw_buttonMouseClicked(evt);
+            }
+        });
+        control_panel.add(rotate_cw_button, new java.awt.GridBagConstraints());
+
+        invert_button.setText("Invert");
+        invert_button.setToolTipText("Invert image (black <-> white)");
+        invert_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                invert_buttonMouseClicked(evt);
+            }
+        });
+        control_panel.add(invert_button, new java.awt.GridBagConstraints());
+
+        save_button.setText("Save");
+        save_button.setToolTipText("Save without closing");
+        save_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                save_buttonMouseClicked(evt);
+            }
+        });
+        control_panel.add(save_button, new java.awt.GridBagConstraints());
+
+        close_button.setText("Close");
+        close_button.setToolTipText("Save and close this chart");
+        close_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                close_buttonMouseClicked(evt);
+            }
+        });
+        control_panel.add(close_button, new java.awt.GridBagConstraints());
+
+        closeall_button.setText("Close All");
+        closeall_button.setToolTipText("Save and close all inactive charts");
+        closeall_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeall_buttonMouseClicked(evt);
+            }
+        });
+        control_panel.add(closeall_button, new java.awt.GridBagConstraints());
+
+        add(control_panel, java.awt.BorderLayout.SOUTH);
+
+        chart_scroll_pane.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        add(chart_scroll_pane, java.awt.BorderLayout.CENTER);
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void close_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_close_buttonMouseClicked
+        if (evt.getComponent().isEnabled()) {
+            close();
+        }
+    }//GEN-LAST:event_close_buttonMouseClicked
+
+    private void save_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_save_buttonMouseClicked
+        if (evt.getComponent().isEnabled()) {
+            save_file();
+        }
+    }//GEN-LAST:event_save_buttonMouseClicked
+
+    private void rotate_cw_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rotate_cw_buttonMouseClicked
+        if (evt.getComponent().isEnabled()) {
+            image_panel.rotate_image(true);
+        }
+
+    }//GEN-LAST:event_rotate_cw_buttonMouseClicked
+
+    private void rotate_ccw_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_rotate_ccw_buttonMouseClicked
+        if (evt.getComponent().isEnabled()) {
+            image_panel.rotate_image(false);
+        }
+    }//GEN-LAST:event_rotate_ccw_buttonMouseClicked
+
+    private void invert_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_invert_buttonMouseClicked
+        if (evt.getComponent().isEnabled()) {
+            image_panel.invert_image();
+        }
+    }//GEN-LAST:event_invert_buttonMouseClicked
+
+    private void closeall_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeall_buttonMouseClicked
+        parent.close_inactive_charts(true);
+    }//GEN-LAST:event_closeall_buttonMouseClicked
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane chart_scroll_pane;
+    private javax.swing.JButton close_button;
+    private javax.swing.JButton closeall_button;
+    private javax.swing.JPanel control_panel;
+    private javax.swing.JLabel data_label;
+    private javax.swing.JButton invert_button;
+    private javax.swing.JButton rotate_ccw_button;
+    private javax.swing.JButton rotate_cw_button;
+    private javax.swing.JButton save_button;
+    // End of variables declaration//GEN-END:variables
+}
