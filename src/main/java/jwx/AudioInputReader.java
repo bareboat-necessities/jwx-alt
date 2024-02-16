@@ -42,8 +42,12 @@
  */
 package jwx;
 
-import javax.sound.sampled.*;
-import java.nio.*;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.Mixer;
+import javax.sound.sampled.TargetDataLine;
+import java.nio.ByteBuffer;
+import java.nio.ShortBuffer;
 
 /**
  *

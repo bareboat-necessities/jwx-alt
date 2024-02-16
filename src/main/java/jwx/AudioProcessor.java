@@ -20,7 +20,7 @@
 package jwx;
 
 import javax.sound.sampled.*;
-import java.nio.*;
+import java.nio.ByteBuffer;
 
 /**
  *

@@ -19,11 +19,12 @@
  ***************************************************************************/
 package jwx;
 
+import javax.imageio.ImageIO;
+import javax.swing.*;
 import java.awt.*;
 import java.awt.image.*;
-import java.io.*;
-import javax.imageio.*;
-import javax.swing.*;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
